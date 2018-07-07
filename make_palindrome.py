@@ -11,9 +11,22 @@ def make_palindrome(str1, str2):
     len2 = len(str2)
 
     perm1 = len1*(len1+1)/2
+    print(perm1)
     perm2 = len2*(len2 + 1)/2
 
     total_perm = perm1 + perm2
+
+    #try 2 break each string into list of all posible substrings
+    #first string
+    perm_list = []
+    for index in range(len1):
+        len1 -= 1
+        print(str1[index:])
+        print(str1[:len1])
+        print(str1[index:len1])
+        # perm_list.append(str1[])
+
+    #try 3 get all the 1 lenght substrings, then 2 length, then 3...up to length of string
 
     return total_perm
 
