@@ -22,4 +22,4 @@ def is_palindrome(input):
         elif input[x] != input[length]:
             return False
         
-print(is_palindrome('race car'))
+# print(is_palindrome('race car'))
