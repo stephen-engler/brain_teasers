@@ -33,12 +33,23 @@ def make_palindrome(str1, str2):
 # print(make_palindrome('string', 'string'))
 
 def make_substrings(strIn):
+    """
+    makes list of all possible substrings in a given string
+    input: string
+    output: list
+    """
     substring_list = []
     str_len = len(strIn)
+    #all possible lengths of a substing
     for substring_size in range(str_len):
+        #each index in a string
         for index_in_string in range(str_len):
+            #makes sure only full substrings(no overflow) are added to list
             if index_in_string + substring_size < str_len:
-                substring_list.append(strIn[index_in_string :index_in_string + substring_size +1 ])
+                #makes substring starting at index to the size +1(range starts at zero)
+                unique_substring = strIn[index_in_string :index_in_string + substring_size +1 ]
+                #appends to list
+                substring_list.append(unique_substring)
 
     return substring_list
 
