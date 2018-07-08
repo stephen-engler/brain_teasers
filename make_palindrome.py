@@ -30,4 +30,19 @@ def make_palindrome(str1, str2):
 
     return total_perm
 
-print(make_palindrome('string', 'string'))
+# print(make_palindrome('string', 'string'))
+
+def make_substrings(strIn):
+    substring_list = []
+    str_len = len(strIn)
+    for substring_size in range(str_len):
+        for index_in_string in range(str_len):
+            if index_in_string + substring_size < str_len:
+                substring_list.append(strIn[index_in_string :index_in_string + substring_size +1 ])
+
+    return substring_list
+
+print(make_substrings('string'))
+
+
+
