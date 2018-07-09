@@ -1,38 +1,6 @@
 from is_palindrome import is_palindrome
 
-def make_palindrome(str1, str2):
-    """
-    makes a palindrome from 2 substrings of the input
-    input str1, str2 strings
-    output palindrome a string OR -1 if no palindrome was found
-    """
-    # find total amout of permutiations
-    len1 = len(str1)
-    len2 = len(str2)
-
-    perm1 = len1*(len1+1)/2
-    print(perm1)
-    perm2 = len2*(len2 + 1)/2
-
-    total_perm = perm1 + perm2
-
-    #try 2 break each string into list of all posible substrings
-    #first string
-    perm_list = []
-    for index in range(len1):
-        len1 -= 1
-        print(str1[index:])
-        print(str1[:len1])
-        print(str1[index:len1])
-        # perm_list.append(str1[])
-
-    #try 3 get all the 1 lenght substrings, then 2 length, then 3...up to length of string
-
-    return total_perm
-
-# print(make_palindrome('string', 'string'))
-
-def make_substrings(strIn):
+def Make_substrings(strIn):
     """
     makes list of all possible substrings in a given string
     input: string
@@ -53,7 +21,31 @@ def make_substrings(strIn):
 
     return substring_list
 
-print(make_substrings('string'))
+def Make_palindrome(str1, str2):
+    """
+    makes a palindrome from 2 substrings of the input
+    input str1, str2 strings
+    output palindrome a string OR -1 if no palindrome was found
+    """
+    longest_palindrome = ''
+
+    substring_list1 = Make_substrings(str1)
+    substring_list2 = Make_substrings(str2)
+
+    for substring1 in substring_list1:
+        for substring2 in substring_list2:
+            possible_palindrome = substring1 + substring2
+            if is_palindrome(possible_palindrome) and len(possible_palindrome) > len(longest_palindrome):
+                longest_palindrome = possible_palindrome
+
+
+    return longest_palindrome
+
+print('longest palindrome ', Make_palindrome('race', 'car'))
+
+
+
+#print(Make_substrings('string'))
 
 
 
