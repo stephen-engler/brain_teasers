@@ -31,7 +31,8 @@ def Make_palindrome(str1, str2):
 
     substring_list1 = Make_substrings(str1)
     substring_list2 = Make_substrings(str2)
-
+    #iterates over substring list1 and list2
+    #for each substring adds them together and checks if it is a palendrome
     for substring1 in substring_list1:
         for substring2 in substring_list2:
             possible_palindrome = substring1 + substring2
